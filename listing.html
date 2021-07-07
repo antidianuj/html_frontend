@@ -1,55 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
     <style>
-        .button {
-  background-color: #4CAF50; /* Green */
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Oxygen);
+
+/* Page layout */
+
+body {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxygen', sans-serif;
+    color: #444;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 300;
+}
+
+header {
+    margin: 0;
+    background: #000;
+    height: 65px;
+    padding: 1px;
+}
+
+article {
+    margin: 40px 30px;
+}
+
+h1 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: 1px;
+    font-size: 2.3em;
+    line-height: 44px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 900;
+    margin: 0;
+    padding: 10px 0 0 30px;
+    letter-spacing: 2px;
+}
+
+h2 { margin: 20px 0 10px 0;
+    font-weight: 900;
+}
+
+p {
+    margin: 20px 0 5px 0;
+}
+
+
+/* Table Layout */
+
+table.vitamins {
+    margin: 20px 0 0 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: #212121;
+    color: #fff;
+}
+
+table.vitamins th, table.vitamins td {
+    text-align: center;
+}
+
+table.vitamins thead {
+    line-height: 12px;
+    background: #2e63e7;
+    text-transform: uppercase;
+}
+
+table.vitamins thead th {
+    color: #fff;
+    padding: 10px;
+    letter-spacing: 1px;
+    vertical-align: bottom;
+}
+
+table.vitamins thead th:nth-child(1) {
+    width: 20%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+table.vitamins thead th:nth-child(2) {
+    width: 30%;
+}
+
+table.vitamins thead th:nth-child(3) {
+    width: 35%;
+}
+
+table.vitamins thead th:nth-child(4) {
+    width: 15%;
+}
+
+table.vitamins tbody {
+    font-size: 1em;
+    line-height: 15px;
+}
+
+table.vitamins tbody tr {
+    border-top: 2px solid rgba(109, 176, 231, 0.8);
+    transition: background 0.6s, color 0.6s;
+}
+
+table.vitamins tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+table.vitamins tbody tr:hover {
+    color: #000;
+    background: rgba(255, 255, 255, 0.7);
+    font-weight: 900;
+}
+
+table.vitamins tbody td {
+    padding: 12px;
+}
+
+table.vitamins tbody tr:hover td:first-child {
+    background: rgba(0,0,0,0);
+}
+
+table.vitamins tbody td:first-child {
+    text-align: left;
+    padding-left: 20px;
+    font-weight: 700;
+    background: rgba(109, 176, 231, 0.35);
+    transition: backgrounf 0.6s;
+}
+
+table.vitamins tfoot {
+    font-size: 0.8em;
+}
+
+table.vitamins tfoot tr {
+    border-top: 2px solid #2e63e7;
+}
+
+table.vitamins tfoot td {
+    color: rgba(255,255,215,0.6);
+    text-align: left;
+    line-height: 15px;
+    padding: 15px 20px;
+}
+
+
+/* Mobile Layout */
+
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 34px;
+        line-height: 36px;
+        padding-left: 15px;
+    }
+
+    article {
+        margin: 10px 15px;
+    }
+
+    table.vitamins {
+        font-size: 0.8em;
+    }
+}
+
+.button {
   border: none;
   color: white;
-  padding: 2px 10px;
+  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 5px solid #161817;
 }
+.button1 {background-color: #3b3857;} /* Green */
+
+.buttoner {
+  background-color: #e01a45;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+.buttoner1 {border-radius: 2px;}
+
     </style>
-<head>
-    <title>Document</title>
-</head>
+<header>
+  <h1>Pending Requests</h1>
+</header>
+<article>
+  <button class="button button1" onClick="display()">Check</button>
+ 
+  <table class="vitamins">
+      <thead>
+          <tr>
+              <th>Hospital</th>
+              <th>Address</th>
+              <th>Something Else</th>
+              <th>Pending</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+             <td align="center"><b><div id="A11" ></div></b></td>
+             <td align="center"><b><div id="A12"></div></b></td>
+             <td align="center"><b><div id="A13"></div></b></td>
+             <td><input type="button" style="visibility: hidden;background-color: #e01a45" value="Add" id="but1" onClick="display2()"/></td>
+          </tr>
+          <tr>
+            <td align="center"><b><div id="A21" ></div></b></td>
+            <td align="center"><b><div id="A22"></div></b></td>
+            <td align="center"><b><div id="A23"></div></b></td>
+            <td><input type="button" style="visibility: hidden;background-color: #e01a45" value="Add" id="but2" onClick="display3()"/></td>
+          </tr>
+          <tr>
+            <td align="center"><b><div id="A31"></div></b></td>
+            <td align="center"><b><div id="A32"></div></b></td>
+            <td align="center"><b><div id="A33"></div></b></td>
+            <td><input type="button" style="visibility: hidden;background-color: #e01a45" value="Add" id="but3" onClick="display4()"/></td>
+          </tr>
+          <tr>
+            <td align="center"><b><div id="A41"></div></b></td>
+            <td align="center"><b><div id="A42"></div></b></td>
+            <td align="center"><b><div id="A43"></div></b></td>
+            <td><input type="button" style="visibility: hidden;background-color: #e01a45" value="Add" id="but4"/></td>
+          </tr>
+          <tr>
+            <td align="center"><b><div id="A51"></div></b></td>
+            <td align="center"><b><div id="A52"></div></b></td>
+            <td align="center"><b><div id="A53"></div></b></td>
+            <td><input type="button" style="visibility: hidden;background-color: #e01a45" value="Add" id="but5"/></td>
+          </tr>
+          <tr>
+            <td align="center"><b><div id="A61"></div></b></td>
+            <td align="center"><b><div id="A62"></div></b></td>
+            <td align="center"><b><div id="A63"></div></b></td>
+            <td><input type="button" style="visibility: hidden;background-color: #e01a45" value="Add" id="but6"/></td>
+          </tr>
+          <tr>
+            <td align="center"><b><div id="A71"></div></b></td>
+            <td align="center"><b><div id="A72"></div></b></td>
+            <td align="center"><b><div id="A73"></div></b></td>
+            <td><input type="button" style="visibility: hidden;background-color: #e01a45" value="Add" id="but7"/></td>
+          </tr>
+          <tr>
+            <td align="center"><b><div id="A81"></div></b></td>
+            <td align="center"><b><div id="A82"></div></b></td>
+            <td align="center"><b><div id="A83"></div></b></td>
+            <td><input type="button" style="visibility: hidden;background-color: #e01a45" value="Add" id="but8"/></td>
+          </tr>
+          <tr>
+            <td align="center"><b><div id="A91"></div></b></td>
+            <td align="center"><b><div id="A92"></div></b></td>
+            <td align="center"><b><div id="A93"></div></b></td>
+            <td><input type="button" style="visibility: hidden;background-color: #e01a45" value="Add" id="but9"/></td>
+          </tr>
 
-<body>
-    <div>
-        <table id="dsTable">
-            <tbody>
-              <tr>
-                <td>Relationship Type</td>
-                <td>Date of Birth</td>
-                <td>Gender</td>
-              </tr>
-              <tr>
-                <td>Spouse</td>
-                <td>1980-22-03</td>
-                <td>female</td>
-                <td><input type="button" value="Add" class="button" onclick="add()"/></td>
-                <td><input type="button" value="Delete" onclick="deleteRow(this)"/></td>
-              </tr>
-              <tr>
-                <td>Child</td>
-                <td>2008-23-06</td>
-                <td>female</td>
-                <td><input type="button" value="Add" onclick="add()"/></td>
-                <td><input type="button" value="Delete" onclick="deleteRow(this)"/></td>
-              </tr>
-            </tbody>
-          </table>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+          <!-- <tr>
+              <td>C</td>
+              <td>water-soluble</td>
+              <td>Broccoli</td>
+              <td>90 mg/day</td>
+          </tr>
+          <tr>
+              <td>D</td>
+              <td>fat-soluble</td>
+              <td>Fish</td>
+              <td>600 IU/day</td>
+          </tr>
+          <tr>
+              <td>E</td>
+              <td>fat-soluble</td>
+              <td>Avocado</td>
+              <td>33 IU/day</td>
+          </tr>
+          <tr>
+              <td>K</td>
+              <td>fat-soluble</td>
+              <td>Cabbage</td>
+              <td>120 mcg/day</td>
+          </tr> -->
+      </tbody>
+  </table>
+</article>
+<script>
+  function display()
+{
+// document.getElementById("displayarea").innerHTML = document.getElementById("fname").value; 
 
-      </div>
-      
-      <script>
-        function deleteRow(btn) {
-  var row = btn.parentNode.parentNode;
-  row.parentNode.removeChild(row);
+document.getElementById("A11").innerHTML = "Hospital A"; 
+document.getElementById("A12").innerHTML = "Seoul"; 
+document.getElementById("A13").innerHTML = "Some Info"; 
+
+document.getElementById("A21").innerHTML = "Hospital B"; 
+document.getElementById("A22").innerHTML = "Goyang Si"; 
+document.getElementById("A23").innerHTML = "Some Info 2"; 
+
+document.getElementById("A31").innerHTML = "Hospital A"; 
+document.getElementById("A32").innerHTML = "Some other place"; 
+document.getElementById("A33").innerHTML = "Some Info 3"; 
+
+
+document.getElementById("but1").style.visibility="visible";
+document.getElementById("but2").style.visibility="visible";
+document.getElementById("but3").style.visibility="visible";
+
 }
-      </script>    
 
-</body>
+function display2()
+{
+  document.getElementById("but1").value="Added!";
+  document.getElementById("but1").style.backgroundColor="#00FF00";
+}
+function display3()
+{
+  document.getElementById("but2").value="Added!";
+  document.getElementById("but2").style.backgroundColor="#00FF00";
+}
+function display4()
+{
+  document.getElementById("but3").value="Added!";
+  document.getElementById("but3").style.backgroundColor="#00FF00";
+}
+
+</script>
 </html>
