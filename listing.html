@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 2px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+    </style>
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <table id="dsTable">
+            <tbody>
+              <tr>
+                <td>Relationship Type</td>
+                <td>Date of Birth</td>
+                <td>Gender</td>
+              </tr>
+              <tr>
+                <td>Spouse</td>
+                <td>1980-22-03</td>
+                <td>female</td>
+                <td><input type="button" value="Add" class="button" onclick="add()"/></td>
+                <td><input type="button" value="Delete" onclick="deleteRow(this)"/></td>
+              </tr>
+              <tr>
+                <td>Child</td>
+                <td>2008-23-06</td>
+                <td>female</td>
+                <td><input type="button" value="Add" onclick="add()"/></td>
+                <td><input type="button" value="Delete" onclick="deleteRow(this)"/></td>
+              </tr>
+            </tbody>
+          </table>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+
+      </div>
+      
+      <script>
+        function deleteRow(btn) {
+  var row = btn.parentNode.parentNode;
+  row.parentNode.removeChild(row);
+}
+      </script>    
+
+</body>
+</html>
